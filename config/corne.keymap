@@ -12,23 +12,20 @@
             bindings = <&mo 1>, <&mo 3>;
         };
 
-        caps_lock_or_shift: caps_lock_or_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "CAPS_LOCK_OR_SHIFT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            flavor = "tap-preferred";
-        };
-
         tap_or_hold: tap_or_hold {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_OR_HOLD";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <240>;
+            tapping-term-ms = <200>;
+        };
+
+        shift_or_caps: shift_or_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_OR_CAPS";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
         };
     };
 
@@ -37,12 +34,12 @@
 
         print_4 {
             bindings = <&kp LS(LG(N4))>;
-            key-positions = <22 23>;
+            key-positions = <10 11>;
         };
 
         print_5 {
             bindings = <&kp LS(LG(N5))>;
-            key-positions = <34 35>;
+            key-positions = <23 22>;
         };
 
         semicolon {
@@ -69,10 +66,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB                             &kp Q                        &kp W                    &kp E                      &kp R                        &kp T        &kp Y    &kp U                         &kp I                       &kp O                     &kp P                            &kp BSPC
-&kp LEFT_CONTROL                    &tap_or_hold LEFT_COMMAND A  &tap_or_hold LEFT_ALT S  &tap_or_hold LEFT_SHIFT D  &tap_or_hold LEFT_CONTROL F  &kp G        &kp H    &tap_or_hold RIGHT_CONTROL J  &tap_or_hold RIGHT_SHIFT K  &tap_or_hold RIGHT_ALT L  &tap_or_hold RIGHT_COMMAND SEMI  &kp SQT
-&caps_lock_or_shift LSHFT CAPSLOCK  &kp Z                        &kp X                    &kp C                      &kp V                        &kp B        &kp N    &kp M                         &kp COMMA                   &kp DOT                   &kp FSLH                         &kp RIGHT_SHIFT
-                                                                                          &tap_or_hold LEFT_ALT ESC  &mo 2                        &kp SPACE    &kp RET  &layer1or3                    &mo 2
+&kp TAB           &tap_or_hold EXCL Q          &tap_or_hold AT_SIGN W   &tap_or_hold HASH E        &tap_or_hold DOLLAR R        &tap_or_hold PERCENT T             &kp Y                           &kp U                         &kp I                       &kp O                     &kp P                            &kp BSPC
+&kp LEFT_CONTROL  &tap_or_hold LEFT_COMMAND A  &tap_or_hold LEFT_ALT S  &tap_or_hold LEFT_SHIFT D  &tap_or_hold LEFT_CONTROL F  &kp G                              &kp H                           &tap_or_hold RIGHT_CONTROL J  &tap_or_hold RIGHT_SHIFT K  &tap_or_hold RIGHT_ALT L  &tap_or_hold RIGHT_COMMAND SEMI  &kp SQT
+&shift_or_caps    &kp Z                        &kp X                    &kp C                      &kp V                        &kp B                              &kp N                           &kp M                         &kp COMMA                   &kp DOT                   &kp FSLH                         &kp RIGHT_SHIFT
+                                                                        &tap_or_hold LEFT_ALT ESC  &mo 2                        &tap_or_hold LEFT_COMMAND SPACE    &tap_or_hold RIGHT_COMMAND RET  &layer1or3                    &mo 2
             >;
         };
 
