@@ -60,17 +60,23 @@
     };
 
     macros {
-        change_keyboard_lang: change_keyboard_lang {
+         change_keyboard_lang: change_keyboard_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_ALT &kp RIGHT_SHIFT &kp RIGHT_CONTROL &kp SPACE>;
+            bindings
+                = <&macro_press &kp RALT &kp RSHFT &kp RCTRL>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp RALT &kp RSHFT &kp RCTRL>;
             label = "CHANGE_KEYBOARD_LANG";
         };
 
         spotlight: spotlight {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp SPACE>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp SPACE>
+                , <&macro_release &kp LGUI>;
             label = "SPOTLIGHT";
         };
     };
