@@ -138,9 +138,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp EXCL        &kp AT        &kp HASH          &kp DLLR      &kp PRCNT       &kp CARET  &kp AMPS    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DELETE  &kp BACKSPACE
-&kp LCTRL  &bt BT_SEL 0    &bt BT_SEL 4  &bt BT_SEL 3      &bt BT_SEL 2  &bt BT_SEL 1    &kp MINUS  &kp PLUS    &kp LBKT              &kp RBKT               &kp BSLH    &kp GRAVE
-&sk LSHFT  &bt BT_CLR_ALL  &bt BT_CLR    &trans            &bt BT_PRV    &bt BT_NXT      &kp UNDER  &kp EQUAL   &kp LBRC              &kp RBRC               &kp PIPE    &kp TILDE
+&kp GRAVE  &kp EXCL        &kp AT        &kp HASH          &kp DLLR      &kp PRCNT       &kp GRAVE  &kp LPAR    &kp RPAR  &kp RIGHT_PARENTHESIS  &kp DELETE  &kp BACKSPACE
+&kp LCTRL  &bt BT_SEL 0    &bt BT_SEL 4  &bt BT_SEL 3      &bt BT_SEL 2  &bt BT_SEL 1    &kp EQUAL  &kp LBKT    &kp RBKT  &kp RBKT               &kp BSLH    &kp CARET
+&sk LSHFT  &bt BT_CLR_ALL  &bt BT_CLR    &trans            &bt BT_PRV    &bt BT_NXT      &kp MINUS  &kp LBRC    &kp RBRC  &kp RBRC               &kp PIPE    &kp TILDE
                                          &kp LEFT_CONTROL  &trans        &kp SPACE       &kp RET    &layer1or3  &kp RALT
             >;
         };
